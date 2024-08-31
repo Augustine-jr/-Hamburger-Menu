@@ -1,0 +1,263 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  opacity: 0.5;
+}
+
+.large{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.small{
+  font-size: 0.8rem;
+  color: #161616a9
+}
+
+
+body{
+  background: #272c2c;
+}
+
+/* Menu toggle*/
+
+.menu-toggle{
+  position: fixed;
+  z-index: 9999;
+  right: 5%;
+  top: 4rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 0.5s;
+}
+
+.menu-toggle.active{
+  transform: rotate(-180deg);
+}
+
+.menu-toggle span{
+  background: #ffffff;
+  width: 100%;
+  height: 3px;
+}
+
+.menu-toggle.active span:nth-child(1){
+  position: absolute;
+  background: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3){
+  position: absolute;
+  background: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Navigation menu */
+
+nav{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.nav.active{
+  pointer-events: auto;
+}
+
+.nav-left{
+  position: relative;
+  z-index: 10;
+  left: -50%;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background: #ffffff;
+  transition: 0.8s;
+}
+
+.nav-left.active{
+  left: 0;
+  transition: 0.5s;
+}
+
+.nav-left ul{
+  list-style: none;
+  position: relative;
+  top: 35%;
+  left: 10%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-right{
+  position: absolute;
+  z-index: 9;
+  left: -50%;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: black;
+  transition: 0.8s;
+}
+
+.nav-right.active{
+  left: 50%;
+  transition: 0.5s;
+}
+
+.nav-link{
+  opacity: 0;
+  position: relative;
+  left: -10%;
+}
+
+.nav-link.active{
+  opacity: 1;
+  left: 0;
+  transition: 0.5s;
+}
+
+.contact{
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  pointer-events: none;
+}
+
+.contact.active{
+  opacity: 1;
+  left: 10%;
+  transition: 0.5s;
+}
+
+.logo{
+  position: fixed;
+  top: 4rem;
+  left: 5%;
+  z-index: 100;
+  color:#ffffff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: 1s;
+}
+
+.logo.active{
+  color: black;
+}
+
+.welcome{
+  color: rgb(255, 255, 255);
+ /*position: relative;
+  left: 5%;
+  top: 30vh;*/
+  width: 40%;
+  text-transform: uppercase;
+}
+
+p{
+  margin-top: 1rem;
+}
+
+
+
+
+/*.img{
+  position: relative;
+  left: 50%;
+  top: 10vh;
+  height: 400px;
+}*/
+
+
+/* Styles for the .img div */
+.img {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+img {
+  height: 100%;
+  filter: grayscale(40%);
+}
+
+button{
+  font-size: 18px;
+    color: #e1e1e1;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+button:focus,
+button:hover {
+  color: #fff;
+}
+
+button:focus:after,
+button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  height: 100vh;
+}
